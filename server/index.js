@@ -63,7 +63,7 @@ app.use("/api/downloads", downloadsRoutes);
   });
   }
 
-db.sequelize.sync({ alter: true }).then(() => {
+db.sequelize.sync({ force: false, alter: false }).then(() => {
   app.listen(port, "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${port}`);
   });
